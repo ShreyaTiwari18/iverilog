@@ -1,0 +1,35 @@
+`timescale 1ns/1ps
+module calculator (
+    input [3:0] A, B,
+    input [1:0] OP,
+    output reg [3:0] RESULT,
+    output reg CARRY
+);
+    always @(*) begin
+        case (OP)
+            2'b00: begin
+                {CARRY, RESULT} = A + B;      // Addition
+            end
+
+            2'b01: begin
+                RESULT = A - B;               // Subtraction
+                CARRY = 0;
+            end
+
+            2'b10: begin
+                RESULT = A & B;               // AND
+                CARRY = 0;
+            end
+
+            2'b11: begin
+                RESULT = A | B;               // OR
+                CARRY = 0;
+            end
+
+            default: begin
+                RESULT = 4'b0000;
+                CARRY = 0;
+            end
+        endcase
+    end
+endmodule

@@ -1,0 +1,28 @@
+`timescale 1ns/1ps
+module tb_calculator;
+    reg [3:0] A, B;
+    reg [1:0] OP;
+    wire [3:0] RESULT;
+    wire CARRY;
+
+    calculator uut (
+        .A(A),
+        .B(B),
+        .OP(OP),
+        .RESULT(RESULT),
+        .CARRY(CARRY)
+    );
+
+    initial begin
+        $dumpfile("calculator.vcd");   // Output file for GTKWave
+        $dumpvars(0, tb_calculator);   // Dump all signals
+
+        // Test patterns
+        A = 4'b0011; B = 4'b0101; OP = 2'b00; #20;  // ADD
+        A = 4'b1001; B = 4'b0011; OP = 2'b01; #20;  // SUB
+        A = 4'b1100; B = 4'b1010; OP = 2'b10; #20;  // AND
+        A = 4'b0101; B = 4'b0011; OP = 2'b11; #20;  // OR
+
+        $finish;
+    end
+endmodule

@@ -1,0 +1,64 @@
+$date
+	Wed Oct 29 01:08:49 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_calculator $end
+$var wire 4 ! RESULT [3:0] $end
+$var wire 1 " CARRY $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 2 % OP [1:0] $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 2 ( OP [1:0] $end
+$var reg 1 " CARRY $end
+$var reg 4 ) RESULT [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 )
+b0 (
+b101 '
+b11 &
+b0 %
+b101 $
+b11 #
+0"
+b1000 !
+$end
+#20000
+b110 !
+b110 )
+b1 %
+b1 (
+b11 $
+b11 '
+b1001 #
+b1001 &
+#40000
+b1000 !
+b1000 )
+b10 %
+b10 (
+b1010 $
+b1010 '
+b1100 #
+b1100 &
+#60000
+b111 !
+b111 )
+b11 %
+b11 (
+b11 $
+b11 '
+b101 #
+b101 &
+#80000
